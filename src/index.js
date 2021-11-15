@@ -1,11 +1,13 @@
-    const preview = document.getElementById('preview');
+//your code here
+
+const preview = document.getElementById('preview');
+    const bigPictureInsert = document.createElement('img')
     const previewImage = document.createElement('img');
     const mealName = document.getElementById('mealName')
     const mealNameInsert = document.createElement('h2')
     const instructions = document.getElementById('instructions')
     const instructionsInsert = document.createElement('p')
     const bigPicture = document.getElementById('bigPicture')
-    const bigPictureInsert = document.createElement('img')
     const random = document.getElementById('random')
     
     
