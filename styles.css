@@ -5,3 +5,17 @@ header {
     background-color: rgba(0,0,0,.8);
     text-align: center;
   }
+
+  #preview {
+    display: flex;
+    overflow-x: auto;
+    margin: 1rem 0;
+    max-width: calc(100vw - 2rem);
+    max-height: 300px;
+  }
+
+  #previewImage {
+    max-height: 300px;
+    align-self: center;
+    display:block;
+  }
