@@ -15,7 +15,17 @@ header {
   }
 
   #previewImage {
-    max-height: 300px;
+    max-height: 200px;
+    align-self: center;
+    display:block;
+  }
+
+  .buttons {
+    display: inline-block;
+  }
+
+  #bigPictureInsert {
+    max-height: 400px;
     align-self: center;
     display:block;
   }
