@@ -10,7 +10,7 @@
     
     
 // Random Meal
-random.addEventListener('click', () => {   
+ 
 fetch('https://www.themealdb.com/api/json/v1/1/random.php')
   .then((resp) => resp.json())
   .then(data => renderPreview(data.meals[0]));
@@ -19,7 +19,7 @@ function renderPreview(meals) {
   // const mealData = meals.meals[0]  
   previewImage.id='previewImage'
 
-  
+  random.addEventListener('click', () => {  
 
   previewImage.src = meals.strMealThumb
   preview.append(previewImage);
