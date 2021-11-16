@@ -7,6 +7,7 @@ const instructionsInsert = document.createElement('p');
 const bigPicture = document.getElementById('bigPicture');
 const bigPictureInsert = document.createElement('img');
 const random = document.getElementById('random');
+const ingredients = document.getElementById('ingredients');
 
 // Random Meal
 
@@ -36,25 +37,27 @@ function renderMain(meals) {
     bigPicture.append(bigPictureInsert);
 
     const ingredientsList = [];
-
     for (let i = 0; i <= 20; i++) {
       if (meals[`strIngredient${i}`]) {
         ingredientsList.push(
           `${meals[`strIngredient${i}`]} - ${meals[`strMeasure${i}`]}`
         );
-        const addIngredient = document.createElement('li');
-        addIngredient.innerHTML = `
-        <ul>
-          ${ingredientsList.map(ingredient => `<li>${ingredient}</li>`).join('')}
-        </ul>`
-        const ingredients = document.getElementById('ingredients');
-        ingredients.appendChild(addIngredient);
-        console.log(addIngredient)
-      } else {
-        break;
       }
-      
+      // } else {
+      //   break;
+      // }
     }
+
+    const addIngredient = document.createElement('li');
+    const addInnerHTML = `
+        <ul>
+          ${ingredientsList
+            .map((ingredient) => `<li>${ingredient}</li>`)
+            .join('')}
+        </ul>`;
+
+    ingredients.innerHTML = addInnerHTML;
+    console.log(ingredients);
   });
 }
 
