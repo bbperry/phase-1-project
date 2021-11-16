@@ -21,10 +21,32 @@
     <form class="buttons" id="searchForm">
         <input type="text" id="searchInput" placeholder="search recipes..." />
 
-        <input type="submit" value="Search Recipes" />
+        <input class='buttons' type="submit" value="Search Recipes" />
     </form>
 
     <button class='buttons' id='random' type="button">Random Meal!</button>
+
+    
+<form id="createTaskForm" action="#" method="POST">
+    <label for="areaSelect">Choose a Region:</label>
+<select name="area" id="areaSelect">
+    <option value="">--Please choose an option--</option>
+    <option value="Chinese">Chinese</option>
+    <option value="Croatian">Croatian</option>
+    <option value="Egyptian">Egyptian</option>
+    <option value="Indian">Indian</option>
+    <option value="Jamaican">Jamaican</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Kenyan">Kenyan</option>
+    <option value="Malaysian">Malaysian</option>
+    <option value="Moroccan">Moroccan</option>
+    <option value="Tunisian">Tunisian</option>
+    <option value="Vietnamese">Vietnamese</option>
+</select>
+<input type="submit" value="Create New Task" required>
+</form>
+
+    <button class='button'  id='reset'  type="button">Reset</button>
 
     <!-- Meal Name -->
     <h2 id=mealName>
@@ -36,15 +58,17 @@
 
     </div>
 
+    <!-- ingrediant list -->
+    <div id=ingredients>
+
+    </div>
+
     <!-- instructions -->
     <div id=instructions>
     <!-- insert instructions -->
     </div>
 
-    <!-- ingrediant list -->
-    <ul id=ingredients>
 
-    </ul>
 
 </body>
 </html>
