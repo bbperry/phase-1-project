@@ -50,3 +50,28 @@ function renderPreview(meals) {
 
 
 // Meal Search
+const recipeList = document.getElementById('preview');
+const searchRecipeForm = document.getElementById('searchForm');
+
+function searchRecipes() {
+
+  e.preventDefault();
+
+  recipeList.replaceChildren();
+
+  let query = document.querySelector('#searchInput').value;
+
+  searchRecipeForm.reset();
+
+  fetch('www.themealdb.com/api/json/v1/1/search.php?s=' + `${query}`) 
+    .then(resp => resp.json()) 
+    .then(recipes => {
+
+      console.log(recipes);
+
+        { recipes.length == 0 ? returnNone() : recipes.forEach(renderPreview) }
+    });
+  
+}
+
+searchForm.addEventListener('submit', searchRecipes)
