@@ -1,8 +1,10 @@
+
+
 header {
     padding: 0.5rem;
     width: 100%;
     color: white;
-    background-color: rgba(0,0,0,.8);
+    background: radial-gradient(violet, indigo, blue, green, yellow, orange, red);
     text-align: center;
   }
 
@@ -12,24 +14,30 @@ header {
     margin: 1rem 0;
     max-width: calc(100vw - 2rem);
     max-height: 300px;
+    
   }
 
-  #previewImage {
+  #preview img {
     max-height: 200px;
-    align-self: center;
-    display:block;
+    transition: 0.2s;
+    cursor: pointer;
+    flex: 0 1 auto;
+  }
+
+  #previewImage:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
   }
 
   .buttons {
     display: inline-block;
+    cursor: pointer;
   }
 
   #bigPictureInsert {
     max-height: 400px;
     align-self: center;
     display:block;
+    border:50px;
+    border: black;
   }
 
-  #instructions {
-    text-align: center;
-  }

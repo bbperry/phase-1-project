@@ -8,14 +8,18 @@ const bigPicture = document.getElementById('bigPicture');
 const bigPictureInsert = document.createElement('img');
 const random = document.getElementById('random');
 const ingredients = document.getElementById('ingredients');
+const reset = document.getElementById('reset')
 
 // Random Meal
+
+reset.addEventListener('click', () => window.location.reload())
 
 fetch('https://www.themealdb.com/api/json/v1/1/random.php')
   .then((resp) => resp.json())
   .then((data) => renderPreview(data.meals[0]));
 
 function renderPreview(meals) {
+
   // const mealData = meals.meals[0]
   previewImage.id = 'previewImage';
 
@@ -48,7 +52,7 @@ function renderMain(meals) {
       // }
     }
 
-    const addIngredient = document.createElement('li');
+    // const addIngredient = document.createElement('li');
     const addInnerHTML = `
         <ul>
           ${ingredientsList
@@ -57,8 +61,33 @@ function renderMain(meals) {
         </ul>`;
 
     ingredients.innerHTML = addInnerHTML;
-    console.log(ingredients);
+    // console.log(ingredients);
   });
 }
 
-// Meal Search
+// Area Select
+const areaURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?a='
+const createTaskForm = document.getElementById('createTaskForm')
+const select = document.getElementById('areaSelect')
+const select2 = select.value
+const submit1 = document.getElementById('createTaskForm').value
+
+
+
+createTaskForm.addEventListener('submit', (e) => { 
+  e.preventDefault()
+  console.log(submit1)
+  fetch(areaURL + `${submit1}`)
+  .then((resp) => resp.json())
+  .then((data) => renderArea(data.meals[0]));
+
+  function renderArea(areaMeals) {
+    
+    previewImage.src = areaMeals.strMealThumb;
+    preview.append(previewImage);
+  }
+
+})
+console.log(select)
+// select.addEventListener()
+// fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Mexican')
