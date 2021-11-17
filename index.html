@@ -4,7 +4,9 @@
         <meta charset="utf-8" />
         <title>Joe Ben's Recipe Finder</title>
         <link rel="stylesheet" type="text/css" href="./styles.css" />
-        <script defer type="text/javascript" src="./src/index.js"></script>
+        <script defer type="text/javascript" src="./src/random.js"></script>
+        <script defer type="text/javascript" src="./src/region.js"></script>
+        <script defer type="text/javascript" src="./src/search.js"></script>
       </head>
 <body>
     <header>
@@ -14,7 +16,7 @@
 
     <!-- preview -->
     <div id='preview'>
-    <!-- image -->
+        <!-- <h2 id = previewName></h2> -->
     </div>
 
     <!-- Search Bar and random button -->
@@ -26,20 +28,22 @@
 
     <button class='buttons' id='random' type="button">Random Meal!</button>
 
-    
-<form id="createTaskForm" action="#" method="POST">
-    <label for="areaSelect">Choose a Region:</label>
+    <!-- Area Select drop down form -->
+<form id="areaForm" action="#" method="POST">
 <select name="area" id="areaSelect">
-    <option value="">--Please choose an option--</option>
+    <option value="">--Or choose a region!--</option>
+    <option value="American">American</option>
     <option value="Chinese">Chinese</option>
     <option value="Croatian">Croatian</option>
     <option value="Egyptian">Egyptian</option>
     <option value="Indian">Indian</option>
+    <option value="Italian">Italian</option>
     <option value="Jamaican">Jamaican</option>
     <option value="Japanese">Japanese</option>
     <option value="Kenyan">Kenyan</option>
     <option value="Malaysian">Malaysian</option>
     <option value="Moroccan">Moroccan</option>
+    <option value="Thai">Thai</option>
     <option value="Tunisian">Tunisian</option>
     <option value="Vietnamese">Vietnamese</option>
 </select>
@@ -60,7 +64,6 @@
 
     <!-- ingrediant list -->
     <div id=ingredients>
-
     </div>
 
     <!-- instructions -->

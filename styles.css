@@ -24,9 +24,13 @@ header {
     flex: 0 1 auto;
   }
 
-  #previewImage:hover {
+  .previewImage:hover {
     box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
   }
+
+/* .previewImage {
+  position: absolute;
+} */
 
   .buttons {
     display: inline-block;
@@ -41,3 +45,9 @@ header {
     border: black;
   }
 
+  #previewMealName {
+    /* position: relative;  */
+    left: 300px;
+    /* z-index: 1000; */
+    
+  }
