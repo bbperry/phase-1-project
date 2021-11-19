@@ -6,6 +6,8 @@ header {
     color: white;
     background: radial-gradient(violet, indigo, blue, green, yellow, orange, red);
     text-align: center;
+    height: 200px;
+  
   }
 
   #preview {
@@ -35,6 +37,7 @@ header {
   .buttons {
     display: inline-block;
     cursor: pointer;
+    text-align: center;
   }
 
   #bigPictureInsert {
@@ -49,5 +52,12 @@ header {
     /* position: relative;  */
     left: 300px;
     /* z-index: 1000; */
-    
+
+  }
+
+  .container {
+    border: 2px;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
   }

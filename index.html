@@ -7,6 +7,7 @@
         <script defer type="text/javascript" src="./src/random.js"></script>
         <script defer type="text/javascript" src="./src/region.js"></script>
         <script defer type="text/javascript" src="./src/search.js"></script>
+        
       </head>
 <body>
     <header>
@@ -33,45 +34,54 @@
 <select name="area" id="areaSelect">
     <option value="">--Or choose a region!--</option>
     <option value="American">American</option>
+    <option value="Canadian">Canadian</option>
     <option value="Chinese">Chinese</option>
     <option value="Croatian">Croatian</option>
     <option value="Egyptian">Egyptian</option>
+    <option value="Greek">Greek</option>
     <option value="Indian">Indian</option>
+    <option value="Irish">Irish</option>
     <option value="Italian">Italian</option>
     <option value="Jamaican">Jamaican</option>
     <option value="Japanese">Japanese</option>
     <option value="Kenyan">Kenyan</option>
     <option value="Malaysian">Malaysian</option>
     <option value="Moroccan">Moroccan</option>
+    <option value="Russian">Russian</option>
     <option value="Thai">Thai</option>
     <option value="Tunisian">Tunisian</option>
     <option value="Vietnamese">Vietnamese</option>
 </select>
-<input type="submit" value="Create New Task" required>
+<input type="submit" value="Choose Region" required>
 </form>
 
-    <button class='button'  id='reset'  type="button">Reset</button>
+<button class='button'  id='reset'  type="button">Reset</button>
 
     <!-- Meal Name -->
-    <h2 id=mealName>
+<h2 id=mealName>
     <!-- insert meal name -->
-   </h2>
+</h2>
 
     <!-- Main Photo -->
-    <div id=bigPicture>
-
-    </div>
-
+<div id=bigPicture>
+</div>
+<div class='container'>
+    
+    <h3>Ingredients:</h3>
     <!-- ingrediant list -->
     <div id=ingredients>
+         
     </div>
-
+</div>
     <!-- instructions -->
-    <div id=instructions>
+    <div class='container' id=instructions>
     <!-- insert instructions -->
+    <h3>Instructions:</h3>
     </div>
 
+<div id='video'>
 
+</div>
 
 </body>
 </html>

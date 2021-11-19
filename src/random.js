@@ -56,5 +56,9 @@ function renderMain(meals) {
         </ul>`;
 
     ingredients.innerHTML = addInnerHTML;
+
+console.log(meals.strYoutube)
+
   });
 }
+
