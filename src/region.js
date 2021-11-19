@@ -25,39 +25,19 @@ areaForm.addEventListener('submit', (e) => {
           .then((resp) => resp.json())
           .then((data) => renderAreaMain(data.meals[0]));
 
-        function renderAreaMain(meal) {  
-        mealNameInsert.innerText = meal.strMeal;
-        console.log(mealNameInsert);
-        mealName.append(mealNameInsert);
-        instructionsInsert.innerText = meal.strInstructions;
-        instructions.append(instructionsInsert);
+        function renderAreaMain(meal) {
+          mealNameInsert.innerText = meal.strMeal;
+          console.log(mealNameInsert);
+          mealName.append(mealNameInsert);
+          instructionsInsert.innerText = meal.strInstructions;
+          instructions.append(instructionsInsert);
 
-        bigPictureInsert.src = meal.strMealThumb;
-        bigPictureInsert.id = 'bigPictureInsert';
-        bigPicture.append(bigPictureInsert);
+          bigPictureInsert.src = meal.strMealThumb;
+          bigPictureInsert.id = 'bigPictureInsert';
+          bigPicture.append(bigPictureInsert);
 
-        const ingredientsList = [];
-        for (let i = 0; i <= 20; i++) {
-          if (meal[`strIngredient${i}`]) {
-            ingredientsList.push(
-              `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
-            );
-          }
-          // } else {
-          //   break;
-          // }
+          recipe(meal);
         }
-
-        // const addIngredient = document.createElement('li');
-        const addInnerHTML = `
-            <ul>
-              ${ingredientsList
-                .map((ingredient) => `<li>${ingredient}</li>`)
-                .join('')}
-            </ul>`;
-
-        ingredients.innerHTML = addInnerHTML;
-              }
       });
     });
   }

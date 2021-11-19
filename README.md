@@ -4,7 +4,7 @@ Everyday millions of Americans go hungry because they do not know what to eat. T
 
 ## Functionality
 
-1. Powerful Search Bar - Search from hundreds and thousands of recipes from around the world. Once a keyword has been search, we'll present 5 food choices to choose from. 
+1. Powerful Search Bar - Search from hundreds and thousands of recipes from around the world. Once a keyword has been search, we'll present matches to choose from. 
 2. Random - Can't decide? We got a delicious recipe waiting for you just a click away. 
 3. Drop Down Menu - Drop down menu that shows cuisines by country
 4. Image preview of your meal - Dishes will be presented in a large finished product. 

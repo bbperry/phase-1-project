@@ -15,7 +15,7 @@ searchForm.addEventListener('submit', (e) => {
 function renderSearch(meals) {
   meals.forEach((meal) => {
     const previewImage = document.createElement('img');
-    const previewMealName = document.createElement('h3');
+    // const previewMealName = document.createElement('h3');
     previewImage.className = 'previewImage';
     previewImage.src = meal.strMealThumb;
     preview.append(previewImage);
@@ -29,23 +29,7 @@ function renderSearch(meals) {
       bigPictureInsert.id = 'bigPictureInsert';
       bigPicture.append(bigPictureInsert);
 
-      const ingredientsList = [];
-      for (let i = 0; i <= 20; i++) {
-        if (meal[`strIngredient${i}`]) {
-          ingredientsList.push(
-            `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
-          );
-        }
-      }
-
-      const addInnerHTML = `
-        <ul>
-          ${ingredientsList
-            .map((ingredient) => `<li>${ingredient}</li>`)
-            .join('')}
-        </ul>`;
-
-      ingredients.innerHTML = addInnerHTML;
+      recipe(meal);
     });
   });
 }

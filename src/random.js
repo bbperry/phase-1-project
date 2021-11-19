@@ -9,6 +9,7 @@ const bigPictureInsert = document.createElement('img');
 const random = document.getElementById('random');
 const ingredients = document.getElementById('ingredients');
 const reset = document.getElementById('reset');
+const area = document.createElement('h4')
 
 // Random Meal
 
@@ -25,6 +26,7 @@ function renderPreview(meals) {
     previewImage.src = meals.strMealThumb;
     preview.append(previewImage);
     renderMain(meals);
+    random.reset()
   });
 }
 
@@ -32,6 +34,8 @@ function renderMain(meals) {
   previewImage.addEventListener('click', () => {
     mealNameInsert.innerText = meals.strMeal;
     mealName.append(mealNameInsert);
+    area.innerText = meals.strArea
+    mealName.appendChild(area)
     instructionsInsert.innerText = meals.strInstructions;
     instructions.append(instructionsInsert);
 
@@ -39,26 +43,28 @@ function renderMain(meals) {
     bigPictureInsert.id = 'bigPictureInsert';
     bigPicture.append(bigPictureInsert);
 
-    const ingredientsList = [];
-    for (let i = 0; i <= 20; i++) {
-      if (meals[`strIngredient${i}`]) {
-        ingredientsList.push(
-          `${meals[`strIngredient${i}`]} - ${meals[`strMeasure${i}`]}`
-        );
-      }
-    }
+    recipe(meals);
+  });
+}
 
-    const addInnerHTML = `
+function recipe(meal) {
+  const ingredientsList = [];
+  for (let i = 0; i <= 20; i++) {
+    if (meal[`strIngredient${i}`]) {
+      ingredientsList.push(
+        `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+      );
+    }
+  }
+
+  const addInnerHTML = `
+      <h3>Ingredients:</h3>
         <ul>
           ${ingredientsList
             .map((ingredient) => `<li>${ingredient}</li>`)
             .join('')}
-        </ul>`;
+        </ul>
+        <h3>Instructions:</h3>`;
 
-    ingredients.innerHTML = addInnerHTML;
-
-console.log(meals.strYoutube)
-
-  });
+  ingredients.innerHTML = addInnerHTML;
 }
-

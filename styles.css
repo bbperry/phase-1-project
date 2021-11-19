@@ -1,13 +1,22 @@
-
+body {
+  background: url(./images/background.jpg) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position:50% 35%;
+}
 
 header {
     padding: 0.5rem;
     width: 100%;
     color: white;
-    background: radial-gradient(violet, indigo, blue, green, yellow, orange, red);
+    background: url(./images/title.jpg) center no-repeat;
     text-align: center;
     height: 200px;
-  
+    border-radius: 25px;
+  }
+
+header h1 {
+    margin: 125px;
   }
 
   #preview {
@@ -16,7 +25,10 @@ header {
     margin: 1rem 0;
     max-width: calc(100vw - 2rem);
     max-height: 300px;
-    
+    border: 2px;
+    border: black;
+    border-style: solid;
+    border-radius: 10px;
   }
 
   #preview img {
@@ -24,6 +36,8 @@ header {
     transition: 0.2s;
     cursor: pointer;
     flex: 0 1 auto;
+    border-radius: 25px;
+    padding: 2px;
   }
 
   .previewImage:hover {
@@ -44,8 +58,10 @@ header {
     max-height: 400px;
     align-self: center;
     display:block;
-    border:50px;
+    padding: 10px;
+    border:5px;
     border: black;
+    border-radius: 15px;
   }
 
   #previewMealName {
@@ -60,4 +76,6 @@ header {
     border: black;
     border-style: solid;
     border-radius: 5px;
+    color: black;
+    font-size: 1.2em;
   }
