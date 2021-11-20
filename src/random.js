@@ -9,33 +9,31 @@ const bigPictureInsert = document.createElement('img');
 const random = document.getElementById('random');
 const ingredients = document.getElementById('ingredients');
 const reset = document.getElementById('reset');
-const area = document.createElement('h4')
+const area = document.createElement('h4');
 
 // Random Meal
 
 reset.addEventListener('click', () => window.location.reload());
 
-fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-  .then((resp) => resp.json())
-  .then((data) => renderPreview(data.meals[0]));
+random.addEventListener('click', () => {
+  fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+    .then((resp) => resp.json())
+    .then((data) => renderPreview(data.meals[0]));
 
-function renderPreview(meals) {
-  previewImage.className = 'previewImage';
+  function renderPreview(meals) {
+    previewImage.className = 'previewImage';
 
-  random.addEventListener('click', () => {
     previewImage.src = meals.strMealThumb;
     preview.append(previewImage);
     renderMain(meals);
-    random.reset()
-  });
-}
-
+  }
+});
 function renderMain(meals) {
   previewImage.addEventListener('click', () => {
     mealNameInsert.innerText = meals.strMeal;
     mealName.append(mealNameInsert);
-    area.innerText = meals.strArea
-    mealName.appendChild(area)
+    area.innerText = meals.strArea;
+    mealName.appendChild(area);
     instructionsInsert.innerText = meals.strInstructions;
     instructions.append(instructionsInsert);
 
@@ -44,6 +42,7 @@ function renderMain(meals) {
     bigPicture.append(bigPictureInsert);
 
     recipe(meals);
+    video(meals)
   });
 }
 
@@ -64,7 +63,19 @@ function recipe(meal) {
             .map((ingredient) => `<li>${ingredient}</li>`)
             .join('')}
         </ul>
-        <h3>Instructions:</h3>`;
+        `;
 
   ingredients.innerHTML = addInnerHTML;
+}
+
+function video(meal) {
+  const video = document.getElementById('video')
+  address = meal.strYoutube
+  console.log(address)
+  let videoId = address.slice(address.length-11,address.length)
+  let videoURL = `https://www.youtube.com/embed/` + `${videoId}`
+  video.innerHTML = `<iframe width="420" height="315"
+src= ${videoURL}>
+</iframe>`
+console.log(videoURL)
 }

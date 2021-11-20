@@ -3,8 +3,9 @@ const areaURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=';
 const areaForm = document.getElementById('areaForm');
 const select = document.getElementById('areaSelect');
 
-areaForm.addEventListener('submit', (e) => {
+areaForm.addEventListener('change', (e) => {
   e.preventDefault();
+
   fetch(areaURL + `${select.value}`)
     .then((resp) => resp.json())
     .then((data) => renderArea(data.meals));
@@ -29,14 +30,16 @@ areaForm.addEventListener('submit', (e) => {
           mealNameInsert.innerText = meal.strMeal;
           console.log(mealNameInsert);
           mealName.append(mealNameInsert);
+          area.innerText = meal.strArea;
+          mealName.appendChild(area);
           instructionsInsert.innerText = meal.strInstructions;
           instructions.append(instructionsInsert);
 
           bigPictureInsert.src = meal.strMealThumb;
           bigPictureInsert.id = 'bigPictureInsert';
           bigPicture.append(bigPictureInsert);
-
           recipe(meal);
+          video(meal)
         }
       });
     });

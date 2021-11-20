@@ -13,6 +13,10 @@ searchForm.addEventListener('submit', (e) => {
     .then((data) => renderSearch(data.meals));
 });
 function renderSearch(meals) {
+  if (meals.meals = null) {
+    preview.innerHTML = '<h1>Nothing Found</h1>'
+    
+  } else {
   meals.forEach((meal) => {
     const previewImage = document.createElement('img');
     // const previewMealName = document.createElement('h3');
@@ -22,6 +26,8 @@ function renderSearch(meals) {
     previewImage.addEventListener('click', () => {
       mealNameInsert.innerText = meal.strMeal;
       mealName.append(mealNameInsert);
+      area.innerText = meal.strArea;
+      mealName.appendChild(area);
       instructionsInsert.innerText = meal.strInstructions;
       instructions.append(instructionsInsert);
 
@@ -30,6 +36,8 @@ function renderSearch(meals) {
       bigPicture.append(bigPictureInsert);
 
       recipe(meal);
+      video(meal)
     });
   });
+  }
 }

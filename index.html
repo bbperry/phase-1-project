@@ -2,16 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Joe Ben's Recipe Finder</title>
+        <title>Recipe Finder 3000</title>
         <link rel="stylesheet" type="text/css" href="./styles.css" />
         <script defer type="text/javascript" src="./src/random.js"></script>
         <script defer type="text/javascript" src="./src/region.js"></script>
         <script defer type="text/javascript" src="./src/search.js"></script>
         
-      </head>
+    </head>
 <body>
     <header>
-        <h1 class='header'>Joe Ben's Recipe Finder</h1>
+        <h1 class='header'>Recipe Finder 3000</h1>
     </header>
 
 
@@ -27,7 +27,7 @@
         <input class='buttons' type="submit" value="Search Recipes" />
     </form>
 
-    <button class='buttons' id='random' type="button">Random Meal!</button>
+    <button class='buttons' id='random' type="button">Random Recipe!</button>
 
     <!-- Area Select drop down form -->
 <form id="areaForm" action="#" method="POST">
@@ -60,10 +60,10 @@
     <option value="Turkish">Turkish</option>
     <option value="Vietnamese">Vietnamese</option>
 </select>
-<input type="submit" value="Choose Region" required>
+<!-- <input class='buttons' type="submit" value="Choose Region" required> -->
 </form>
 
-<button class='button'  id='reset'  type="button">Reset</button>
+<button class='buttons'  id='reset'  type="button">Reset Preview List</button>
 
     <!-- Meal Name -->
 <h2 id=mealName>
@@ -71,13 +71,13 @@
 </h2>
 
     <!-- Main Photo -->
-<div id=bigPicture>
+<div class='ingred' id=bigPicture>
 </div>
+<div class='ingred' id=ingredients>            
+    </div>
 <div class='container'>   
     <!-- <h3>Ingredients:</h3> -->
     <!-- ingrediant list -->
-    <div id=ingredients>            
-    </div>
     <!-- instructions -->
     <div id=instructions>
     </div>
