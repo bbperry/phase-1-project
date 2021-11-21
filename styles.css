@@ -6,17 +6,18 @@ body {
 }
 
 header {
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   width: 100%;
   color: white;
   background: url(./images/title.jpg) center no-repeat;
   text-align: center;
   height: 200px;
   border-radius: 25px;
+  position:relative;
 }
 
-header h1 {
-  margin: 130px;
+.header {
+  padding-top: 120px;
 }
 
 #preview {
@@ -25,10 +26,10 @@ header h1 {
   margin: 1rem 0;
   max-width: calc(100vw - 2rem);
   max-height: 300px;
-  border: 2px;
   border: black;
   border-style: solid;
   border-radius: 10px;
+  border-width: 3px;
 }
 
 #preview img {
@@ -57,9 +58,8 @@ header h1 {
   max-height: 400px;
   align-self: center;
   display: block;
-  padding: 10px;
-  border: 5px;
-  border: black;
+  border: thick;
+  border: solid black;
   border-radius: 25px;
 }
 
@@ -94,4 +94,14 @@ header h1 {
   display:inline-block;
   border:black;
   border:2px;
+}
+
+#box {
+  height: 100px;
+  width: 100px;
+  border-width: thick;
+  border: solid black;
+  background-color: white;
+  position: absolute;
+  right: 10px;
 }
