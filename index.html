@@ -15,8 +15,7 @@
     </header>
 
     <!-- preview -->
-    <div id="preview">
-    </div>
+    <div id="preview"></div>
 
     <!-- Search Bar and random button -->
     <form class="buttons" id="searchForm">
@@ -31,7 +30,7 @@
     </form>
 
     <button class="buttons" id="random" type="button">Random Recipe!</button>
-    <div class="buttons" id="box"></div>
+    <span><strong>Click the thumbnail to view a recipe.</strong></span>
 
     <!-- Area Select drop down form -->
     <form id="areaForm" action="#" method="POST">
@@ -80,5 +79,20 @@
       <div id="instructions"></div>
       <div id="video"></div>
     </div>
+
+    <h4>Tell us your favorite recipe!</h4>
+    <div class="comcon">
+      <ul id="comments-list" class="comments"></ul>
+    </div>
+    <form id="comment-form" class="comment-form">
+      <input
+        class="comment-input"
+        type="text"
+        name="comment"
+        id="comment"
+        placeholder="What's your favorite..."
+      />
+      <button class="comment-button" type="submit">Post</button>
+    </form>
   </body>
 </html>

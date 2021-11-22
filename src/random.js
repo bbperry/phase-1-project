@@ -86,3 +86,16 @@ function resetPreview() {
     preview.removeChild(preview.lastElementChild);
   }
 }
+
+const commentList = document.getElementById("comments-list");
+const commentForm = document.getElementById("comment-form");
+const currentEntry = document.getElementById("comment");
+
+commentForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const newComment = document.createElement("li");
+  newComment.textContent = currentEntry.value;
+  commentList.appendChild(newComment);
+  console.log(newComment);
+  e.target.reset();
+});
