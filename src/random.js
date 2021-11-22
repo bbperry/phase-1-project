@@ -21,8 +21,10 @@ random.addEventListener('click', () => {
     .then((data) => renderPreview(data.meals[0]));
 
   function renderPreview(meals) {
+    while (preview.lastElementChild) {
+      preview.removeChild(preview.lastElementChild);
+    }
     previewImage.className = 'previewImage';
-
     previewImage.src = meals.strMealThumb;
     preview.append(previewImage);
     renderMain(meals);
@@ -30,19 +32,7 @@ random.addEventListener('click', () => {
 });
 function renderMain(meals) {
   previewImage.addEventListener('click', () => {
-    mealNameInsert.innerText = meals.strMeal;
-    mealName.append(mealNameInsert);
-    area.innerText = meals.strArea;
-    mealName.appendChild(area);
-    instructionsInsert.innerText = meals.strInstructions;
-    instructions.append(instructionsInsert);
-
-    bigPictureInsert.src = meals.strMealThumb;
-    bigPictureInsert.id = 'bigPictureInsert';
-    bigPicture.append(bigPictureInsert);
-
-    recipe(meals);
-    video(meals)
+    renderDetails(meals);
   });
 }
 
@@ -69,13 +59,29 @@ function recipe(meal) {
 }
 
 function video(meal) {
-  const video = document.getElementById('video')
-  address = meal.strYoutube
-  console.log(address)
-  let videoId = address.slice(address.length-11,address.length)
-  let videoURL = `https://www.youtube.com/embed/` + `${videoId}`
+  const video = document.getElementById('video');
+  address = meal.strYoutube;
+  console.log(address);
+  let videoId = address.slice(address.length - 11, address.length);
+  let videoURL = `https://www.youtube.com/embed/` + `${videoId}`;
   video.innerHTML = `<iframe width="420" height="315"
 src= ${videoURL}>
-</iframe>`
-console.log(videoURL)
+</iframe>`;
+  console.log(videoURL);
+}
+
+function renderDetails(meals) {
+  mealNameInsert.innerText = meals.strMeal;
+  mealName.append(mealNameInsert);
+  area.innerText = meals.strArea;
+  mealName.appendChild(area);
+  instructionsInsert.innerText = meals.strInstructions;
+  instructions.append(instructionsInsert);
+
+  bigPictureInsert.src = meals.strMealThumb;
+  bigPictureInsert.id = 'bigPictureInsert';
+  bigPicture.append(bigPictureInsert);
+
+  recipe(meals);
+  video(meals);
 }

@@ -97,11 +97,14 @@ header {
 }
 
 #box {
-  height: 100px;
-  width: 100px;
+  /* height: 70px;
+  width: 200px;
   border-width: thick;
   border: solid black;
-  background-color: white;
+  border-radius:15px;
+  background-color: white; */
   position: absolute;
-  right: 10px;
+  right: 150px;
+  /* right: 8px;
+  top: 460px; */
 }
