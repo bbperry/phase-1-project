@@ -1,98 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Recipe Finder 3000</title>
-        <link rel="stylesheet" type="text/css" href="./styles.css" />
-        <script defer type="text/javascript" src="./src/random.js"></script>
-        <script defer type="text/javascript" src="./src/region.js"></script>
-        <script defer type="text/javascript" src="./src/search.js"></script>
-        
-    </head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Recipe LookerUpper</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script defer type="text/javascript" src="./src/random.js"></script>
+    <script defer type="text/javascript" src="./src/region.js"></script>
+    <script defer type="text/javascript" src="./src/search.js"></script>
+  </head>
+  <body>
     <header>
-        <h1 class='header'>Recipe LookerUpper</h1>
-         <h6>life stories not included</h6>
+      <h1 class="header">Recipe LookerUpper</h1>
+      <h6>life stories not included</h6>
     </header>
-   
 
     <!-- preview -->
-    <div id='preview'>
-        <!-- <h2 id = previewName></h2> -->
+    <div id="preview">
     </div>
 
     <!-- Search Bar and random button -->
     <form class="buttons" id="searchForm">
-        <input type="text" id="searchInput" placeholder="search recipes..." required/>
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="search recipes..."
+        required
+      />
 
-        <input class='buttons' type="submit" value="Search Recipes" />
+      <input class="buttons" type="submit" value="Search Recipes" />
     </form>
 
-    <button class='buttons' id='random' type="button">Random Recipe!</button>
-<div class='buttons' id="box">
-    
-
-
-</div>
-
+    <button class="buttons" id="random" type="button">Random Recipe!</button>
+    <div class="buttons" id="box"></div>
 
     <!-- Area Select drop down form -->
-<form id="areaForm" action="#" method="POST">
-<select name="area" id="areaSelect">
-    <option value="">--Or choose a region!--</option>
-    <option value="American">American</option>
-    <option value="British">British</option>
-    <option value="Canadian">Canadian</option>
-    <option value="Chinese">Chinese</option>
-    <option value="Croatian">Croatian</option>
-    <option value="Dutch">Dutch</option>
-    <option value="Egyptian">Egyptian</option>
-    <option value="French">French</option>
-    <option value="Greek">Greek</option>
-    <option value="Indian">Indian</option>
-    <option value="Irish">Irish</option>
-    <option value="Italian">Italian</option>
-    <option value="Jamaican">Jamaican</option>
-    <option value="Japanese">Japanese</option>
-    <option value="Kenyan">Kenyan</option>
-    <option value="Malaysian">Malaysian</option>
-    <option value="Mexican">Mexican</option>
-    <option value="Moroccan">Moroccan</option>
-    <option value="Polish">Polish</option>
-    <option value="Portuguese">Portuguese</option>
-    <option value="Russian">Russian</option>
-    <option value="Spanish">Spanish</option>
-    <option value="Thai">Thai</option>
-    <option value="Tunisian">Tunisian</option>
-    <option value="Turkish">Turkish</option>
-    <option value="Vietnamese">Vietnamese</option>
-</select>
-<!-- <input class='buttons' type="submit" value="Choose Region" required> -->
-</form>
+    <form id="areaForm" action="#" method="POST">
+      <select name="area" id="areaSelect">
+        <option value="">--Or choose a region!--</option>
+        <option value="American">American</option>
+        <option value="British">British</option>
+        <option value="Canadian">Canadian</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Croatian">Croatian</option>
+        <option value="Dutch">Dutch</option>
+        <option value="Egyptian">Egyptian</option>
+        <option value="French">French</option>
+        <option value="Greek">Greek</option>
+        <option value="Indian">Indian</option>
+        <option value="Irish">Irish</option>
+        <option value="Italian">Italian</option>
+        <option value="Jamaican">Jamaican</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Kenyan">Kenyan</option>
+        <option value="Malaysian">Malaysian</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Moroccan">Moroccan</option>
+        <option value="Polish">Polish</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Russian">Russian</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Thai">Thai</option>
+        <option value="Tunisian">Tunisian</option>
+        <option value="Turkish">Turkish</option>
+        <option value="Vietnamese">Vietnamese</option>
+      </select>
+    </form>
 
-<button class='buttons'  id='reset'  type="button">Reset Preview List</button>
-
-
-
-
-    <!-- Meal Name -->
-<h2 id=mealName>
-    <!-- insert meal name -->
-</h2>
+    <h2 id="mealName">
+      <!-- insert meal name -->
+    </h2>
 
     <!-- Main Photo -->
-<div class='ingred' id=bigPicture>
-</div>
-<div class='ingred' id=ingredients>            
+    <div class="ingred" id="bigPicture"></div>
+    <div class="ingred" id="ingredients"></div>
+
+    <div class="container">
+      <!-- ingrediant list -->
+      <!-- instructions -->
+      <div id="instructions"></div>
+      <div id="video"></div>
     </div>
-<div class='container'>   
-    <!-- <h3>Ingredients:</h3> -->
-    <!-- ingrediant list -->
-    <!-- instructions -->
-    <div id=instructions>
-    </div>
-    <div id='video'>
-    </div>
-</div>
-</body>
+  </body>
 </html>

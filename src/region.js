@@ -3,10 +3,9 @@ const areaURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=';
 const areaForm = document.getElementById('areaForm');
 const select = document.getElementById('areaSelect');
 
+// Display meals from selected area
 areaForm.addEventListener('change', () => {
-  while (preview.lastElementChild) {
-    preview.removeChild(preview.lastElementChild);
-  }
+  resetPreview();
   fetch(areaURL + `${select.value}`)
     .then((resp) => resp.json())
     .then((data) => renderArea(data.meals));
@@ -19,6 +18,7 @@ areaForm.addEventListener('change', () => {
       previewImage.alt = meal.idMeal;
       preview.append(previewImage);
 
+      //   Look up clicked meal by ID
       previewImage.addEventListener('click', () => {
         fetch(
           'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' +
@@ -26,23 +26,6 @@ areaForm.addEventListener('change', () => {
         )
           .then((resp) => resp.json())
           .then((data) => renderDetails(data.meals[0]));
-
-        // function renderAreaMain(meals) {
-        //     renderDetails(meals)
-        //   mealNameInsert.innerText = meal.strMeal;
-        //   console.log(mealNameInsert);
-        //   mealName.append(mealNameInsert);
-        //   area.innerText = meal.strArea;
-        //   mealName.appendChild(area);
-        //   instructionsInsert.innerText = meal.strInstructions;
-        //   instructions.append(instructionsInsert);
-
-        //   bigPictureInsert.src = meal.strMealThumb;
-        //   bigPictureInsert.id = 'bigPictureInsert';
-        //   bigPicture.append(bigPictureInsert);
-        //   recipe(meal);
-        //   video(meal)
-        // }
       });
     });
   }

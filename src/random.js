@@ -13,30 +13,24 @@ const area = document.createElement('h4');
 
 // Random Meal
 
-reset.addEventListener('click', () => window.location.reload());
-
 random.addEventListener('click', () => {
   fetch('https://www.themealdb.com/api/json/v1/1/random.php')
     .then((resp) => resp.json())
     .then((data) => renderPreview(data.meals[0]));
 
   function renderPreview(meals) {
-    while (preview.lastElementChild) {
-      preview.removeChild(preview.lastElementChild);
-    }
+    resetPreview();
     previewImage.className = 'previewImage';
     previewImage.src = meals.strMealThumb;
     preview.append(previewImage);
-    renderMain(meals);
+    previewImage.addEventListener('click', () => {
+      renderDetails(meals);
+    });
   }
 });
-function renderMain(meals) {
-  previewImage.addEventListener('click', () => {
-    renderDetails(meals);
-  });
-}
 
-function recipe(meal) {
+// Display Ingredients
+function renderIngredients(meal) {
   const ingredientsList = [];
   for (let i = 0; i <= 20; i++) {
     if (meal[`strIngredient${i}`]) {
@@ -58,6 +52,7 @@ function recipe(meal) {
   ingredients.innerHTML = addInnerHTML;
 }
 
+// embed youtube video
 function video(meal) {
   const video = document.getElementById('video');
   address = meal.strYoutube;
@@ -70,6 +65,7 @@ src= ${videoURL}>
   console.log(videoURL);
 }
 
+// Display full details of Recipe
 function renderDetails(meals) {
   mealNameInsert.innerText = meals.strMeal;
   mealName.append(mealNameInsert);
@@ -77,11 +73,16 @@ function renderDetails(meals) {
   mealName.appendChild(area);
   instructionsInsert.innerText = meals.strInstructions;
   instructions.append(instructionsInsert);
-
   bigPictureInsert.src = meals.strMealThumb;
   bigPictureInsert.id = 'bigPictureInsert';
   bigPicture.append(bigPictureInsert);
-
-  recipe(meals);
+  renderIngredients(meals);
   video(meals);
+}
+
+// resets preview window when new search is made
+function resetPreview() {
+  while (preview.lastElementChild) {
+    preview.removeChild(preview.lastElementChild);
+  }
 }
